@@ -20,12 +20,6 @@ impl Rectangle {
     }
 }
 
-#[derive(Debug)]
-enum IpAddrKind {
-    V4(u32, u32, u32, u32),
-    _V6(String),
-}
-
 fn main() {
     let rect1 = Rectangle {
         width: 30,
@@ -36,10 +30,6 @@ fn main() {
         width: 31,
         height: 22,
     };
-
-    let home = IpAddrKind::V4(192, 168, 2, 1);
-
-    println!("value {:?}", home);
 
     let rect3 = Rectangle::square(20);
 
