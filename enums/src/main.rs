@@ -4,10 +4,23 @@ enum IpAddrKind {
     _V6(String),
 }
 
+struct IpAddr {
+    kind: IpAddrKind,
+    address: String,
+}
+
 fn main() {
-    let absent: Option<i32> = None;
+    let _absent: Option<i32> = None;
 
-    let home = IpAddrKind::V4(192, 168, 2, 1);
+    let home = IpAddr {
+        kind: IpAddrKind::V4(192, 168, 0, 1),
+        address: String::from("127.0.0.1"),
+    };
 
-    println!("value {:?}", home);
+    route(&home);
+}
+
+fn route(ip: &IpAddr) {
+    println!("kind {:?}", ip.kind);
+    println!("address {}", ip.address);
 }
